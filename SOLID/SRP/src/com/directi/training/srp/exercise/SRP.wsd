@@ -1,0 +1,20 @@
+@startuml 
+class Car
+Car : id 
+Car : model
+Car : brand 
+Car : getId() 
+Car : getModel()
+Car : getBrand() 
+class CarDb  
+CarDb : getCars()
+CarDb : getFromDb()
+class CarManager
+CarManager : getCarsNames()
+CarManager : getBestCar()
+
+CarManager *-- CarDb : use
+CarDb *-- Car
+
+
+@enduml

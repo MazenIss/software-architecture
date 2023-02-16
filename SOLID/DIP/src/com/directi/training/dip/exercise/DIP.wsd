@@ -1,0 +1,18 @@
+@startuml 
+interface Iencoder 
+Iencoder : encodeWithFiles()
+Iencoder : encodeBasedOnNetworkAndDatabase(Idatabase Idb)
+interface  Idatabase
+Idatabase : write(String inputString)
+class EncodingModule 
+class EncodingModuleClient
+class MyDatabase
+MyDatabase : data
+MyDatabase : count
+
+Iencoder <|-- EncodingModule
+Idatabase <|-- MyDatabase
+EncodingModuleClient *-- Idatabase : use
+EncodingModuleClient *-- EncodingModule : use
+
+@enduml

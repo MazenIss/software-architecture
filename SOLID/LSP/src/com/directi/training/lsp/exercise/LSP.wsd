@@ -1,0 +1,16 @@
+@startuml 
+class Duck 
+Duck : quack()
+Duck : swim()
+class ElectronicDuck
+ElectronicDuck : TurnOn()
+ElectronicDuck : TurnOff()
+class Pool 
+Pool : quack(Duck...)
+Pool : swim(Duck...)
+Pool : run()
+
+Duck <|-- ElectronicDuck
+Pool *-- Duck : use
+
+@enduml
